@@ -13,9 +13,11 @@
     },
     "dependencies": {
         "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
-        "@cypress/browserify-preprocessor": "latest",
-        "stepDefinitions": "cypress/e2e/[filepath]/**/*.{js,ts}"
+        "@cypress/browserify-preprocessor": "latest"
+    },
+    "cypress-cucumber-preprocessor": {
+        "stepDefinitions": [
+            "cypress/e2e/Tests/StepDefinitions/*.{js,ts}"
+        ]
     }
-   
-    
 }

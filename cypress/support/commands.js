@@ -23,3 +23,34 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('typeInEditBox', (locator, text, clearExisting = true) => {
+    
+    cy.log('Typing text: ' + text + " into locator: "+ locator); 
+    //we can have this if really needed 
+
+    cy.get(locator, { timeout: 10000 }).should('be.visible').then((element) => {
+     
+      cy.wrap(element).scrollIntoView();
+      if (clearExisting) {
+        cy.wrap(element).clear();
+      }
+  
+      cy.wrap(element).type(text);
+    });
+  });
+
+
+  Cypress.Commands.add('clickButton', (locator, force = false) => {
+   
+    cy.log(`Clicking on button with locator: "${locator}", Force: ${force}`);
+    //we can have this if really needed 
+  
+    cy.get(locator, { timeout: 10000 })
+      .should('be.visible')  
+      .click({ force: force });  
+
+    //If user need force equal to tru while clicking button he can shared that argument while calling this customised method
+  });
+
