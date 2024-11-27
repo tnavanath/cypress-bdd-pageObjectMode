@@ -1,0 +1,15 @@
+{
+    "name": "automationframwork",
+    "version": "1.0.0",
+    "description": "Cypress Automation - BDD Framwork - Page Object Model",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Navanath Temgire",
+    "license": "ISC",
+    "devDependencies": {
+      "cypress": "^13.16.0"
+    }
+  }
+  
