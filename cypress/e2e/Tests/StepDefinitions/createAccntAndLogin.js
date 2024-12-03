@@ -4,6 +4,8 @@ import createAccntPage from "../../Pages/CreateAccntPage"
 Given('user is on the Create Account page', () => {
   cy.visit('https://magento.softwaretestingboard.com/');
   cy.contains("Create an Account").click()
+
+  
 });
 
 When('user fill in the mandatory details', function (datatable) {
@@ -12,7 +14,7 @@ When('user fill in the mandatory details', function (datatable) {
 
     createAccntPage.fillFirstName(element.FirstName)
     createAccntPage.fillLastName(element.LastName)
-    createAccntPage.fillEmailId(element.EmailId)
+    createAccntPage.fillEmailId(element.FirstName+element.LastName)
     createAccntPage.fillpassword(element.Password)
     createAccntPage.fillConfirmPassword(element.Password)
   })

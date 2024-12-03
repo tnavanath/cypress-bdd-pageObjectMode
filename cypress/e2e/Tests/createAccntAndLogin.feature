@@ -3,8 +3,8 @@ Feature: Account creation process validation
     Scenario: Enter mandatory details on the 'Create Account' page and verify account creation
         Given user is on the Create Account page
         When user fill in the mandatory details
-            | FirstName | LastName | EmailId                | Password      |
-            | Kapil     | Sharma   | Kapil.Sharma@gmail.com | KapilSharma29 |
+            | FirstName | LastName | EmailId | Password      |
+            | Kapil     | Sharma   |         | KapilSharma29 |
         And submit the details
         Then the user should be able to log in with the created credentials
 

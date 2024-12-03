@@ -23,7 +23,9 @@ class CreateAccntPage {
     }
 
     static fillEmailId(strEmailAddress) {
-        cy.typeInEditBox(email_address, strEmailAddress)
+        const randomNumber = Math. floor(Math. random() * 100) + 1
+        console.log(strEmailAddress+randomNumber+"@gmail.com")
+        cy.typeInEditBox(email_address, strEmailAddress+randomNumber+"@gmail.com")
 
     }
 
@@ -56,7 +58,7 @@ class CreateAccntPage {
     static clickOnSignIn() {
 
         cy.clickButton(signIn)
-
+        
     }
 
     static verifyAccntCretion() {

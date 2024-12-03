@@ -25,6 +25,9 @@ async function setupNodeEvents(on, config) {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
-    specPattern: "**/*/*.feature"
+    specPattern: [
+      "**/*.feature",  // Fixed pattern to match .feature files in any subdirectory
+      "**/LinearTestScripts/*.js"        // Fixed pattern to match .js files in any subdirectory
+    ]
   },
 });
